@@ -1,7 +1,7 @@
 ### Trelo Clone
-For educational purpose
-Written in React
+For educational purpose <br>
+Written in React <br>
 
-Features:
--Can log in sucessfuly
--Bad login information will result in a message
+Features: <br>
+-Can log in sucessfuly <br>
+-Bad login information will result in a message <br>
