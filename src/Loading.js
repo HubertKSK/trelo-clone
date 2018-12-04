@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
-import LoadingGear from './Loading_Gear.svg';
+import React, { Component } from "react";
 
 class Loading extends Component {
   render() {
     return (
       <div className="Loading">
-      <h1>Loading</h1>
-        
+        <h1>Loading</h1>
       </div>
     );
   }
