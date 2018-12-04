@@ -1,4 +1,4 @@
-### Trelo Clone
+### Trello Clone
 For educational purpose <br>
 Written in React <br>
 
