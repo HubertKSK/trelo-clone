@@ -1,28 +1,45 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Loading from './Loading';
+import InputPassword from './InputPassword';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: null,
+      login: '',
+      password: ''
+    }
+}
+ManageLogin = (newlogin,newpassword) => {
+  this.setState ({
+    login: newlogin,
+    password: newpassword
+  })
+}
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+    if (this.state.login === 'admin' &&this.state.password === 'admin') {
+    this.setState({
+      user: 'admin'
+    })
+    }
+    if (this.state.user !== null) {
+      return (
+      <div>
+        <Loading />
       </div>
-    );
-  }
+      )
+    }
+    else {
+      return (
+        <div className="App">
+          <InputPassword ManageLogin={this.ManageLogin.bind(this)} />
+          
+        </div>
+      )
+    }
+    }
 }
 
 export default App;
