@@ -20,7 +20,7 @@ class App extends Component {
     } else {
       this.setState({
         BadPass: true
-      })
+      });
     }
   };
   render() {
