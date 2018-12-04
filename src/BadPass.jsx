@@ -5,7 +5,7 @@ class BadPass extends Component {
     if (this.props.badpass === true) {
       return (
         <div className="BadPass">
-          <p>Enter correct login details</p>
+          <h3>Enter correct login details</h3>
         </div>
       );
     }
