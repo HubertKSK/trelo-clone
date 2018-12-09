@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
-class BadPass extends Component {
+class badPass extends Component {
   render() {
-    if (this.props.badpass === true) {
+    if (this.props.badPass === true) {
       return (
-        <div className="BadPass">
+        <div className="badPass">
           <h3>Enter correct login details</h3>
         </div>
       );
@@ -12,4 +12,4 @@ class BadPass extends Component {
     return null;
   }
 }
-export default BadPass;
+export default badPass;

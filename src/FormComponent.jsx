@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class InputPassword extends Component {
+class FormComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,12 +19,12 @@ class InputPassword extends Component {
     });
   };
   submit = () => {
-    this.props.ManageLogin(this.state.login, this.state.password);
+    this.props.onSubmit(this.state.login, this.state.password);
   };
 
   render() {
     return (
-      <div className="InputPassword">
+      <div className="FormComponent">
         <form>
           <h3>Login</h3>
           <input
@@ -51,4 +51,4 @@ class InputPassword extends Component {
   }
 }
 
-export default InputPassword;
+export default FormComponent;
