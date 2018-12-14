@@ -8,17 +8,14 @@ class AppComponent extends Component {
       super(props);
       this.state = {
          user: null,
-         login: null,
-         passoword: null,
+         login: "",
+         passoword: "",
          badPass: false
       };
    }
-   onSubmit = (newlogin, newpassword) => {
-      this.setState({
-         login: newlogin,
-         passoword: newpassword
-      });
-      if (this.state.login === "admin" && this.state.passoword === "admin") {
+   onSubmit = () => {
+      const { login, password } = this.state;
+      if (login === "admin" && password === "admin") {
          this.setState({
             user: "admin"
          });
@@ -28,7 +25,10 @@ class AppComponent extends Component {
          });
       }
    };
-
+   handleOnChange = evt => {
+      console.log("event::", evt.target.name);
+      this.setState({ [evt.target.name]: evt.target.value });
+   };
    render() {
       if (this.state.user !== null) {
          return (
@@ -39,13 +39,25 @@ class AppComponent extends Component {
       } else if (this.state.user === null && this.state.badPass === false) {
          return (
             <div className="AppComponent">
-               <FormComponent onSubmit={this.onSubmit} />
+               <FormComponent
+                  title="Sign in"
+                  loginValue={this.login}
+                  passwordValue={this.password}
+                  onChange={this.handleOnChange}
+                  onSubmit={this.onSubmit}
+               />
             </div>
          );
       } else if (this.state.user === null && this.state.badPass === true) {
          return (
             <div className="AppComponent">
-               <FormComponent onSubmit={this.onSubmit} />
+               <FormComponent
+                  title="Sign in"
+                  loginValue={this.login}
+                  passwordValue={this.password}
+                  onChange={this.handleOnChange}
+                  onSubmit={this.onSubmit}
+               />
                <h3>Enter correct login details</h3>
             </div>
          );
